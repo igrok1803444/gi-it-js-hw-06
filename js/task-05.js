@@ -2,9 +2,10 @@ const inputName = document.querySelector("#name-input");
 const outputName = document.querySelector("#name-output");
 
 inputName.addEventListener('input', (name) => {
-    if (name.currentTarget.value !== '') {
+    const comparedValue = name.currentTarget.value.trim();
+    if ( comparedValue !== '') {
    
-        outputName.textContent = name.currentTarget.value;
+        outputName.textContent = comparedValue;
     } else {
         outputName.textContent = 'Anonymous';
     }

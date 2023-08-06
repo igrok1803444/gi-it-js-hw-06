@@ -9,5 +9,5 @@ const nameOfBodiesBC = document.querySelector('.color');
 
 changeColorButton.addEventListener('click', () => {
   document.body.style.backgroundColor = getRandomHexColor();
-  nameOfBodiesBC.textContent = getRandomHexColor();
+  nameOfBodiesBC.textContent = document.body.style.backgroundColor;
 })
