@@ -6,13 +6,12 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-let markup =  [];
-ingredients.forEach((ingredient) => {
+const markup = ingredients.map((ingredient) => {
   const li = document.createElement('li')
-li.className = 'item';
-li.textContent = ingredient;
-  markup.push(li);
-})
-console.log(markup);
+  li.className = 'item';
+  li.textContent = ingredient;
+  return li;
+});
+
 const list = document.querySelector('#ingredients');
 list.append(...markup)

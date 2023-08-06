@@ -14,10 +14,23 @@ const images = [
 ];
 let markup = ' ';
 images.map(({ url, alt }) => {
-  markup += `<li><img src='${url}' alt='${alt}' width="256px"></li> `
+  markup += `<li><img src='${url}' alt='${alt}' width="100%" height="100%" style></li> `
 });
 const list = document.querySelector('.gallery');
 list.insertAdjacentHTML('beforeend', markup);
 list.style.display = 'flex';
 list.style.gap = "20px";
-console.log(markup);
+list.style.listStyle = "none";
+list.style.padding = "0";
+list.style.flexWrap = "wrap"
+
+for (const listItem of list.children) {
+  listItem.style.width ="calc((100% - 40px) / 3)"
+}
+
+for (const listItem of list.children) {
+  for (const itemChildren of listItem.children) {
+    itemChildren.style.display = "block";
+    itemChildren.style.objectFit = "cover";
+  }
+}
